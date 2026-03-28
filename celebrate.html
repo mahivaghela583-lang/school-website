@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Calendar</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; }
+header { text-align:center; padding:20px; background:blue;}
+header h2 { color: darkblue; margin:5px; }
+.calendar-section { text-align:center; padding:30px; }
+#calendar { display:inline-block; border:1px solid #ccc; padding:10px; border-radius:10px; background:#f9f9f9; }
+#calendar table { border-collapse: collapse; width:100%; }
+#calendar th, #calendar td { width:40px; height:40px; text-align:center; border:1px solid #ccc; font-weight:bold; }
+#calendar th { background:#0073e6; color:white; font-size:14px; }
+.today { background: yellow; }
+.sunday { color: red; }
+.holiday { background: green; color: white; }
+footer {
+	background:blue;
+	color:white;
+	text-align:center;
+	padding:10px;
+	}
+</style>
+</head>
+<body>
+<header>
+<h2>Shree Saraswati Primary School</h2>
+<p>Monthly Calendar</p>
+</header>
+<div class="calendar-section">
+<div id="calendar"></div>
+</div>
+
+<script>
+function generateCalendar() {
+    const calendar = document.getElementById("calendar");
+    const date = new Date();
+    const today = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+    // Example holidays (change as needed)
+    const holidays = [10, 20]; // 10th and 20th of this month are holidays
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    let table = "<table>";
+    table += "<tr><th colspan='7'>"+months[month]+" "+year+"</th></tr>";
+    table += "<tr>";
+    for(let d=0; d<7; d++){ table += "<th>"+days[d]+"</th>"; }
+    table += "</tr><tr>";
+
+    // Empty cells before first day
+    for(let i=0; i<firstDay; i++){ table += "<td></td>"; }
+
+    for(let day=1; day<=lastDate; day++){
+        const dayOfWeek = new Date(year, month, day).getDay();
+        let className = "";
+        if(day === today) className = "today";
+        if(dayOfWeek === 0) className = "sunday";
+        if(holidays.includes(day)) className = "holiday";
+
+        table += "<td class='"+className+"'>"+day+"</td>";
+        if((day + firstDay) % 7 === 0){ table += "</tr><tr>"; }
+    }
+
+    table += "</tr></table>";
+    calendar.innerHTML = table;
+}
+window.onload = generateCalendar;
+</script>
+<footer>
+<a href="index.html">Back to Home ></a>
+<p>© 2026 Shree Saraswati Primary School</p>
+</footer>
+</body>
+</html>

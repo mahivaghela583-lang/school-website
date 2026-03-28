@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Header */
+header {
+    background: linear-gradient(blue, darkblue);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Logo */
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Remove extra gap */
+h1 {
+    margin: 5px 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Navbar */
+nav {
+    background: black;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    background: #f2f2f2;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Section */
+.section {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    background: #e6e6e6;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.login-box {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+}
+
+button {
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#error {
+    color: red;
+}
+.about-section {
+    text-align: center;  /* center text */
+    padding: 30px;
+}
+
+.about-section h2 {
+    color: darkblue;
+}
+
+.about-section p {
+    color: gray;
+    font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0073e6;
+  color: white;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px;
+    }
+}
+.gallery div {
+    position: relative;
+}
+
+.gallery button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}

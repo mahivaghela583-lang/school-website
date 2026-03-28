@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<table border="1" id="dataTable">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobile</th>
+</tr>
+</table>
+
+<script>
+let table = document.getElementById("dataTable");
+
+let data = JSON.parse(localStorage.getItem("students")) || [];
+
+data.forEach(function(item) {
+    let row = table.insertRow();
+    row.insertCell(0).innerHTML = item.name;
+    row.insertCell(1).innerHTML = item.email;
+    row.insertCell(2).innerHTML = item.mobile;
+});
+</script>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
+
+row.insertCell(3).innerHTML = "<button onclick='deleteRow(this)'>Delete</button>";
+
+function deleteRow(btn) {
+    let row = btn.parentNode.parentNode;
+    row.remove();
+}
+
+row.insertCell(3).innerHTML = "<button onclick='deleteRow(this)'>Delete</button>";
+
+function deleteRow(btn){
+    let row = btn.parentNode.parentNode;
+    row.remove();
+}
+<footer>
+<a href="index.html">Back to Home ></a>
+<p>© 2026 Shree Saraswati Primary School</p>
+</footer>
+
+</body>
+</html>

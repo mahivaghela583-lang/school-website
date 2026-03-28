@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admission Form</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+header {
+    background: linear-gradient(blue, darkblue);
+    color: white;
+    padding: 15px;
+}
+
+nav {
+    background: black;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+}
+
+button {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    display: inline-block;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>School Admission Form</h1>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="#">Gallery</a>
+<a href="#">Admission</a>
+</nav>
+
+<h2>Student Admission Form</h2>
+
+Student Name<br>
+<input type="text" id="name"><br><br>
+
+Birthday<br>
+<input type="date" id="birthday"><br><br>
+
+Class<br>
+<input type="text" id="class"><br><br>
+
+Mobile Number<br>
+<input type="text" id="mobile"><br><br>
+
+<button onclick="showData()">Submit</button>
+
+<h3>Submitted Details</h3>
+<div id="result"></div>
+
+<script>
+function showData() {
+    let name = document.getElementById("name").value;
+    let birthday = document.getElementById("birthday").value;
+    let className = document.getElementById("class").value;
+    let mobile = document.getElementById("mobile").value;
+
+    document.getElementById("result").innerHTML = `
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Birthday:</b> ${birthday}</p>
+        <p><b>Class:</b> ${className}</p>
+        <p><b>Mobile:</b> ${mobile}</p>
+    `;
+}
+if(name == "" || mobile == ""){
+    alert("Please fill all details");
+    return;
+}
+</script>
+
+<footer>
+<a href="index.html">Back to Home></a>
+<p>© 2026 Shree Saraswati Primary School</p>
+</footer>
+
+
+</body>
+</html>
